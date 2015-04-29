@@ -1,0 +1,23 @@
+<div class="padding text-center">
+  <h1>Welcome to 1ClickTrips</h1>
+  <p>Login with your account*</p>
+</div>
+
+<div class="list">
+  <form name="loginForm" ng-submit="login()">
+    <label class="item item-input">
+      <input type="text" placeholder="Email" ng-model="email" required/>
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Password" ng-model="password" required>
+    </label>
+  </form>
+</div>
+
+<div class="padding">
+  <button class="button button-block button-positive activated" ng-click="login()">Login</button>
+</div>
+
+<div class="bar bar-footer">
+  <div class="title">* Don't have an account? Create one.</div>
+</div>
