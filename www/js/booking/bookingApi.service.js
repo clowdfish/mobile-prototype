@@ -6,7 +6,7 @@
     .module('app.booking')
     .service('bookingApi', bookingApi);
 
-  function bookingApi($q, $http) {
+  function bookingApi($q, $http) {    
     var _this = this;
     this.shareBooking = null;
 

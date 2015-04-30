@@ -1,6 +1,6 @@
 <ul class="list">
-  <li class="item item-icon-right" ng-repeat="trip in bookings">
+  <li class="item item-icon-right" ng-repeat="trip in bookings" ng-click="selectBooking(trip)">
     {{trip.tripName}}
-    <a ui-sref="booking.detail({id: trip.tripId})"><i class="icon ion-ios-arrow-right"></i>
+    <i class="icon ion-ios-arrow-right"></i>
   </li>
 </ul>

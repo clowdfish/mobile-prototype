@@ -1,4 +1,6 @@
-<div class="bar bar-header">  
+<div class="bar bar-header">
+  <button class="button button-icon ion-ios-arrow-back" ng-click="back()" ng-show="menuData.previousState != null">
+  </button>  
   <h1 class="title">Your trip</h1>
   <div class="buttons">
     <button class="button button-icon ion-more" ng-click="popover.show($event)">
@@ -6,6 +8,6 @@
   </div>
 </div>
 
-<div class="content padding has-header">
-  <div ui-view></div>
+<div class="content padding has-header" style="height:100%">
+  <div ui-view style="height:100%"></div>
 </div>

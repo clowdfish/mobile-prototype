@@ -6,7 +6,8 @@
     .module('app.booking')
     .controller('listCtrl', listCtrl);
 
-  function listCtrl($scope, $state, $ionicLoading, $ionicPopover, bookingApi) {
+  function listCtrl($scope, $state, $ionicLoading, $ionicPopover, bookingApi, menuData) {
+    $scope.menuData.setPreviousState(null);
     $ionicLoading.show({
       template: 'Loading booking items...'
     });
@@ -15,19 +16,17 @@
     bookingApi
       .getBooking()
       .then(function(bookings) {
-        $scope.bookings = bookings;
-        console.log(bookings);
+        $scope.bookings = bookings;        
         $ionicLoading.hide();
       }, function() {
         $ionicLoading.hide();
       });
 
-    $scope.selectBooking = function(booking) {
-      bookingApi.shareBooking = booking;
+    $scope.selectBooking = function(booking) {      
       $state.go('booking.detail', {
         id: booking.tripId
       });
-    }
+    };
 
   }
 

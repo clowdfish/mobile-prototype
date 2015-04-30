@@ -21,7 +21,7 @@
 	</div>
 	<div class="item item-icon-right">
 		{{booking.documentName}}
-		<a ui-sref="booking.pdf({id: booking.id})">
+		<a ng-click="openPdf(booking)">
 			<i class="icon ion-ios-arrow-right"></i>	
 		</a>				
 	</div>	
