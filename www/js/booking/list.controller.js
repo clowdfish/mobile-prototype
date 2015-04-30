@@ -6,7 +6,7 @@
     .module('app.booking')
     .controller('listCtrl', listCtrl);
 
-  function listCtrl($scope, $ionicLoading, $ionicPopover, bookingApi) {
+  function listCtrl($scope, $state, $ionicLoading, $ionicPopover, bookingApi) {
     $ionicLoading.show({
       template: 'Loading booking items...'
     });
@@ -24,17 +24,11 @@
 
     $scope.selectBooking = function(booking) {
       bookingApi.shareBooking = booking;
-      $state.go('')
+      $state.go('booking.detail', {
+        id: booking.tripId
+      });
     }
-    $ionicPopover.fromTemplateUrl('templates/list/popover-menu.html', {
-      scope: $scope
-    }).then(function(popover) {
-      $scope.popover = popover;
-    });
 
-    $scope.$on('$destroy', function() {
-      $scope.popover.remove();
-    });
   }
 
 })();

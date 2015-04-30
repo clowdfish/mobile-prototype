@@ -11,7 +11,7 @@
       authApi
         .login($scope.email, $scope.password)
         .then(function() {
-          $state.go('list');
+          $state.go('booking.list');
         });
     }
   }

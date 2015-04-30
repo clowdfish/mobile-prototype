@@ -7,7 +7,7 @@
     .service('bookingApi', bookingApi);
 
   function bookingApi($q, $http) {
-
+    var _this = this;
     this.shareBooking = null;
 
     this.getBooking = function() {
@@ -18,7 +18,18 @@
             resolve(bookings);
           });
       });
-    }
+    };
+    
+    this.getBookingItem = function() {
+      return $q(function(resolve, reject) {
+        _this.getBooking()
+          .then(function(data) {
+             var item = data[0];             
+             item['documentName'] = item.travelDocument.split('/').splice(-1)[0];             
+             resolve(item);
+          });
+      });
+    };
   }
 
 })();

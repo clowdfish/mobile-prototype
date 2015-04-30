@@ -1,0 +1,28 @@
+<div class="list">
+	<div class="item item-devider">
+		Trip Details
+	</div>
+	
+	<div class="item">
+		Start
+		<span class="item-note">
+			{{booking.origin.description}}
+		</span>
+	</div>
+	
+	<div class="item">
+		Destination
+		<span class="item-note">
+			{{booking.destination.description}}
+		</span>
+	</div>
+	<div class="item item-devider">
+		Document
+	</div>
+	<div class="item item-icon-right">
+		{{booking.documentName}}
+		<a ui-sref="booking.pdf({id: booking.id})">
+			<i class="icon ion-ios-arrow-right"></i>	
+		</a>				
+	</div>	
+</div>
