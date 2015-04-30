@@ -6,14 +6,14 @@
     .module('app.booking')
     .service('bookingApi', bookingApi);
 
-  function bookingApi($q, $http) {    
+  function bookingApi($q, $http, appConfig) {    
     var _this = this;
     this.shareBooking = null;
 
     this.getBooking = function() {
       return $q(function(resolve, reject) {
         $http
-          .get('/api/mobile-bookings')
+          .get(appConfig.serverAddress + '/mobile-bookings')
           .success(function(bookings) {
             resolve(bookings);
           });

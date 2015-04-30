@@ -6,11 +6,11 @@
     .module('app.auth')
     .service('authApi', authApi);
 
-  function authApi($http, $q) {
+  function authApi($http, $q, appConfig) {
     this.login = function(email, password) {
       return $q(function(resolve, reject) {
         $http
-          .post('/api/auth/local', {
+          .post(appConfig.serverAddress + '/auth/local', {
             email: email,
             password: password
           })

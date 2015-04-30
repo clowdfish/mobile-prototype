@@ -14,6 +14,9 @@
     'app.auth',
     'app.booking'
   ])
+  .constant('appConfig', {
+    serverAddress: 'http://192.168.0.100:8080'
+  })
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
