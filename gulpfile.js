@@ -51,7 +51,7 @@ gulp.task('git-check', function(done) {
   done();
 });
 
-gulp.task('webserver', function() {
+gulp.task('server', function() {
   gulp.src('./www')
     .pipe(webserver({
       livereload: true,
