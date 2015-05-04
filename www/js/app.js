@@ -11,11 +11,13 @@
 
   angular.module('app', [
     'ionic',
+    'app.common',
     'app.auth',
     'app.booking'
   ])
   .constant('appConfig', {
-    serverAddress: 'http://192.168.0.100:8080'
+    //serverAddress: 'http://localhost:8080'
+    serverAddress: '/api'
   })
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {

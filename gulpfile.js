@@ -27,6 +27,10 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
+gulp.task('lib', function() {
+  
+});
+
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
 });
